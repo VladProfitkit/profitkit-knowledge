@@ -1,0 +1,177 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    @include reset;
+    @include dflex(nowrap, column, flex-start, stretch);
+    height: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Montserrat", "Arial", sans-serif;
+    color: $text-color;
+    background-color: #fff;
+
+    &.fixed {
+        padding-right: 17px;
+        overflow: hidden;
+    }
+}
+
+main {
+    flex-grow: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.slick-initialized .slick-list {
+    width: 100%;
+}
+
+.slick-initialized .slick-track {
+    display: flex;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    max-width: 1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+.hidden-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    max-width: 1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+.jx-knightlab {
+    display: none !important;
+}
+
+h1 {
+    margin: 0 0 30px;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 35px;
+    color: $accent-color-dark;
+}
+
+h2 {
+    margin: 0 0 30px;
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 33px;
+    color: $accent-color-dark;
+}
+
+h3 {
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: $accent-color-dark;
+}
+
+h4 {
+    margin: 0 0 30px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: $accent-color-dark;
+}
+
+h5 {
+    margin: 0 0 20px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    color: $accent-color-dark;
+}
+
+h6 {
+    margin: 0 0 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $accent-color-dark;
+}
+
+p {
+    margin: 0 0 20px;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: $desktop-width) {
+    body {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    h1 {
+        margin: 0 0 60px;
+        font-size: 55px;
+        line-height: 70px;
+    }
+
+    h2 {
+        margin: 0 0 60px;
+        font-size: 42px;
+        line-height: 50px;
+    }
+
+    h3 {
+        margin: 0 0 40px;
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+    h4 {
+        margin: 0 0 50px;
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    h5 {
+        margin: 0 0 30px;
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    h6 {
+        margin: 0 0 0;
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    p {
+        margin: 0 0 30px;
+    }
+}

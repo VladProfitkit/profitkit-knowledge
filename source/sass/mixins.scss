@@ -1,0 +1,112 @@
+@mixin reset {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin dflex ($wrap: nowrap, $direction: row, $justify: flex-start, $align: center) {
+    display: flex;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin abs-pseudo {
+    content: "";
+    position: absolute;
+}
+
+@mixin abs-center {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin abs-center-x {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin abs-center-y {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+@mixin center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin center-x {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin center-y {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin transition ($prop: all) {
+    transition: $prop .3s ease-out;
+}
+
+@mixin transition-delay {
+    transition-delay: $transition-delay;
+}
+
+@mixin object-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@mixin background($url) {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url($url);
+}
+
+@mixin background-inline {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@mixin gradient-text {
+    background-image: $gradient;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@mixin gradient-text-light {
+    background-image: $gradient-simple;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@mixin hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
