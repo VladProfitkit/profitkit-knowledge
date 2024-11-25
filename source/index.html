@@ -4,13 +4,972 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/choises.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Все страницы</title>
 </head>
 <body>
-    <div style="padding: 40px 100px;">
-        <a href="main.html">Главная</a><br>
+    <div style="padding: 40px 60px;">
+        <a href="main.html">Главная (пока пустая)</a><br>
 
+        <a href="javascript:;" data-modal="#thanks">Модалка «Спасибо»</a><br>
+        <a href="javascript:;" data-modal="#form1">Модалка «Пример формы 1»</a><br>
+        <a href="javascript:;" data-modal="#form2">Модалка «Пример формы 2»</a><br>
+        <a href="javascript:;" data-modal="#form3_1">Модалка «Пример формы 3.1»</a><br>
+        <a href="javascript:;" data-modal="#form3_2">Модалка «Пример формы 3.2»</a><br>
+        <a href="javascript:;" data-modal="#form4_1">Модалка «Пример формы 4.1»</a><br>
+        <a href="javascript:;" data-modal="#form4_2">Модалка «Пример формы 4.2»</a><br>
     </div>
+
+    <div class="modal" id="thanks" style="display: none">
+        <div class="modal__box modal__box--padding">
+            <div class="modal__content modal__content--center">
+                <h2 class="modal__heading">Спасибо! Ваши данные приняты.</h2>
+
+                <div class="modal__btns">
+                    <button class="modal__btn btn">Пройти заново</button>
+                    <button class="modal__btn btn btn--accent" data-modal-close>Ок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="form1" style="display: none">
+        <div class="modal__box">
+            <button class="modal__close" data-modal-close>
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.25 8.75L8.75 26.25M8.75 8.75L26.25 26.25" stroke="#8C8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="modal__content">
+                <h2 class="modal__heading">Пример формы</h2>
+
+                <form class="modal__form form" action="#" method="POST">
+                    <div class="form__items">
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Строка<span class="form__item-heading-required">*</span></p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--text">
+                                <input class="form__item-input" type="text" placeholder="placeholder" name="field_1_1">
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Выпадающий список</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--select">
+                                <select class="form__item-select" name="field_1_2">
+                                    <option value="1">Опция 1</option>
+                                    <option value="2">Опция 2</option>
+                                    <option value="3">Опция 3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Радиокнопки</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--radios">
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_1_3" value="1" id="field_1_3_1" checked>
+                                    <label class="form__item-radio-label" for="field_1_3_1">Вариант 1</label>
+                                </div>
+
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_1_3" value="2" id="field_1_3_2">
+                                    <label class="form__item-radio-label" for="field_1_3_2">Вариант 2</label>
+                                </div>
+
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_1_3" value="3" id="field_1_3_3">
+                                    <label class="form__item-radio-label" for="field_1_3_3">Вариант 3</label>
+                                </div>
+
+                                <div class="form__item-radio form__item-radio--custom">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_1_3" value="" id="field_1_3_4">
+                                    <div class="form__item-radio-label">
+                                        <input class="form__item-input form__item-input--custom-radio-option" type="text" placeholder="Свой вариант">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--checkboxes">
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_4" value="Y" id="field_1_4_1">
+                                    <label class="form__item-checkbox-label" for="field_1_4_1">Да</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс множественный</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--checkboxes">
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_5" value="Тридцать три" id="field_1_5_1">
+                                    <label class="form__item-checkbox-label" for="field_1_5_1">Тридцать три</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_5" value="Двенадцать три пять шесть" id="field_1_5_2" checked>
+                                    <label class="form__item-checkbox-label" for="field_1_5_2">Двенадцать три пять шесть</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_5" value="Девятнадцать" id="field_1_5_3">
+                                    <label class="form__item-checkbox-label" for="field_1_5_3">Девятнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_5" value="Восемнадцать" id="field_1_5_4">
+                                    <label class="form__item-checkbox-label" for="field_1_5_4">Восемнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_5" value="Тринадцать" id="field_1_5_5">
+                                    <label class="form__item-checkbox-label" for="field_1_5_5">Тринадцать</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс множественный</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--checkboxes form__item-body--checkboxes-column">
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_5" value="Тридцать три" id="field_1_6_1">
+                                    <label class="form__item-checkbox-label" for="field_1_6_1">Тридцать три</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_5" value="Двенадцать три пять шесть" id="field_1_6_2" checked>
+                                    <label class="form__item-checkbox-label" for="field_1_6_2">Двенадцать три пять шесть</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_5" value="Девятнадцать" id="field_1_6_3">
+                                    <label class="form__item-checkbox-label" for="field_1_6_3">Девятнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_5" value="Восемнадцать" id="field_1_6_4">
+                                    <label class="form__item-checkbox-label" for="field_1_6_4">Восемнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_5" value="Тринадцать" id="field_1_6_5">
+                                    <label class="form__item-checkbox-label" for="field_1_6_5">Тринадцать</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Файл</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--files">
+                                <input class="form__item-file hidden-input" type="file" name="field_1_6" id="field_1_6">
+                                <div class="form__item-file-list"></div>
+                                <label class="form__item-file-label btn btn--low" for="field_1_6">Выбрать файл</label>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Файл множественный</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--files">
+                                <input class="form__item-file hidden-input" type="file" name="field_1_7[]" multiple id="field_1_7">
+                                <div class="form__item-file-list"></div>
+                                <label class="form__item-file-label btn btn--low" for="field_1_7">Выбрать файл</label>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Текстовое поле</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--textarea">
+                                <textarea class="form__item-textarea" name="field_1_8" placeholder="Placeholder"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__errors">
+                        <p class="form__error">Заполните обязательное поле «Строка»</p>
+                        <p class="form__error">Заполните обязательное поле «Файл»</p>
+                    </div>
+
+                    <div class="form__footer">
+                        <div class="form__agreement form__item-checkbox">
+                            <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_1_agreement" value="Y" id="field_1_agreement" checked>
+                            <label class="form__item-checkbox-label" for="field_1_agreement">Я&nbsp;ознакомился с&nbsp;соглашением сервиса и&nbsp;согласен с&nbsp;условиями пре&shy;до&shy;ста&shy;вле&shy;ния услуг</label>
+                        </div>
+
+                        <div class="form__btns modal__btns">
+                            <button class="modal__btn btn" type="button" data-modal-close>Отмена</button>
+                            <button class="modal__btn btn btn--accent" type="submit">Заказать</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="form2" style="display: none">
+        <div class="modal__box">
+            <button class="modal__close" data-modal-close>
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.25 8.75L8.75 26.25M8.75 8.75L26.25 26.25" stroke="#8C8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="modal__content">
+                <h2 class="modal__heading">Пример формы</h2>
+
+                <p class="modal__description">В своём стремлении повысить качество жизни, они забывают, что новая модель организационной деятельности в значительной степени обусловливает важность как самодостаточных, так и внешне зависимых концептуальных решений.</p>
+
+                <form class="modal__form form" action="#" method="POST">
+                    <div class="form__items">
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Текст</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--multiple-text">
+                                <div class="form__item-miltistring-text">
+                                    <input class="form__item-input form__item-input--multistring" type="text" placeholder="placeholder" name="field_2_1[]">
+                                    <button class="form__item-miltistring-remove btn btn--remove" type="button">
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18.5 6.5L6.5 18.5M6.5 6.5L18.5 18.5" stroke="#D2D2D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="form__item-miltistring-text">
+                                    <input class="form__item-input form__item-input--multistring" type="text" placeholder="placeholder" name="field_2_1[]">
+                                    <button class="form__item-miltistring-remove btn btn--remove" type="button">
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18.5 6.5L6.5 18.5M6.5 6.5L18.5 18.5" stroke="#D2D2D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <button class="form__item-miltistring-add btn btn--low" type="button" data-field-name="field_2_1[]">Добавить строку</button>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Строка<span class="form__item-heading-required">*</span></p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--text">
+                                <input class="form__item-input" type="text" placeholder="placeholder" name="field_2_2">
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Список с поиском</p>
+
+                                <div class="form__item-tip tip">
+                                    <button class="tip__trigger" type="button"></button>
+                                    <div class="tip__content">
+                                        Текст подсказки текст текст текст текст
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form__item-body form__item-body--search-select">
+                                <select class="form__item-search-select hidden-input" name="field_2_4">
+                                    <option value="1">Action</option>
+                                    <option value="2">Account</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс множественный с изображениями</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--img-checkboxes form__item-body--img-checkboxes-column">
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_5" value="1" id="field_2_5_1">
+                                    <label class="form__item-img-checkbox-label" for="field_2_5_1">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-1.jpg" alt="1">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_5" value="2" id="field_2_5_2">
+                                    <label class="form__item-img-checkbox-label" for="field_2_5_2">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-2.jpg" alt="2">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_5" value="3" id="field_2_5_3" checked>
+                                    <label class="form__item-img-checkbox-label" for="field_2_5_3">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-3.jpg" alt="3">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_5" value="4" id="field_2_5_4">
+                                    <label class="form__item-img-checkbox-label" for="field_2_5_4">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-4.jpg" alt="4">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс множественный с изображениями</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--img-checkboxes">
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_6" value="1" id="field_2_6_1">
+                                    <label class="form__item-img-checkbox-label" for="field_2_6_1">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-1.jpg" alt="1">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_6" value="2" id="field_2_6_2">
+                                    <label class="form__item-img-checkbox-label" for="field_2_6_2">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-2.jpg" alt="2">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_6" value="3" id="field_2_6_3" checked>
+                                    <label class="form__item-img-checkbox-label" for="field_2_6_3">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-3.jpg" alt="3">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_6" value="4" id="field_2_6_4">
+                                    <label class="form__item-img-checkbox-label" for="field_2_6_4">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-4.jpg" alt="4">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс множественный с изображениями</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--img-checkboxes form__item-body--img-checkboxes-medium">
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_7" value="1" id="field_2_7_1">
+                                    <label class="form__item-img-checkbox-label" for="field_2_7_1">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-1.jpg" alt="1">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_7" value="2" id="field_2_7_2">
+                                    <label class="form__item-img-checkbox-label" for="field_2_7_2">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-2.jpg" alt="2">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_7" value="3" id="field_2_7_3" checked>
+                                    <label class="form__item-img-checkbox-label" for="field_2_7_3">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-3.jpg" alt="3">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_7" value="4" id="field_2_7_4">
+                                    <label class="form__item-img-checkbox-label" for="field_2_7_4">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-4.jpg" alt="4">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс множественный с изображениями</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--img-checkboxes form__item-body--img-checkboxes-small">
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_8" value="1" id="field_2_8_1">
+                                    <label class="form__item-img-checkbox-label" for="field_2_8_1">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-1.jpg" alt="1">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_8" value="2" id="field_2_8_2">
+                                    <label class="form__item-img-checkbox-label" for="field_2_8_2">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-2.jpg" alt="2">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_8" value="3" id="field_2_8_3" checked>
+                                    <label class="form__item-img-checkbox-label" for="field_2_8_3">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-3.jpg" alt="3">
+                                    </label>
+                                </div>
+
+                                <div class="form__item-img-checkbox">
+                                    <input class="form__item-img-checkbox-input hidden-input" type="checkbox" name="field_2_8" value="4" id="field_2_8_4">
+                                    <label class="form__item-img-checkbox-label" for="field_2_8_4">
+                                        <img class="form__item-img-checkbox-img" src="img/img-checkboxes-4.jpg" alt="4">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__errors"></div>
+
+                    <div class="form__footer">
+                        <div class="form__agreement form__item-checkbox">
+                            <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_2_agreement" value="Y" id="field_2_agreement" checked>
+                            <label class="form__item-checkbox-label" for="field_2_agreement">Я&nbsp;ознакомился с&nbsp;соглашением сервиса и&nbsp;согласен с&nbsp;условиями пре&shy;до&shy;ста&shy;вле&shy;ния услуг</label>
+                        </div>
+
+                        <div class="form__btns modal__btns">
+                            <button class="modal__btn btn" type="button" data-modal-close>Отмена</button>
+                            <button class="modal__btn btn btn--accent" type="submit">Заказать</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="form3_1" style="display: none">
+        <div class="modal__box">
+            <button class="modal__close" data-modal-close>
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.25 8.75L8.75 26.25M8.75 8.75L26.25 26.25" stroke="#8C8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="modal__content">
+                <h2 class="modal__heading">Пример формы</h2>
+
+                <form class="modal__form form" action="#" method="POST">
+                    <div class="form__progress form__progress--mobile-only">
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step"></div>
+                    </div>
+
+                    <div class="form__items">
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Строка<span class="form__item-heading-required">*</span></p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--text">
+                                <input class="form__item-input" type="text" placeholder="placeholder" name="field_3_1">
+                            </div>
+
+                            <div class="form__item-footer"></div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Радиокнопки</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--radios">
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_3_2" value="1" id="field_3_2_1" checked>
+                                    <label class="form__item-radio-label" for="field_6_3_1">Вариант 1</label>
+                                </div>
+
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_3_2" value="2" id="field_3_2_2">
+                                    <label class="form__item-radio-label" for="field_3_2_2">Вариант 2</label>
+                                </div>
+
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_3_2" value="3" id="field_3_2_3">
+                                    <label class="form__item-radio-label" for="field_3_2_3">Вариант 3</label>
+                                </div>
+
+                                <div class="form__item-radio form__item-radio--custom">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_3_2" value="" id="field_3_2_4">
+                                    <div class="form__item-radio-label">
+                                        <input class="form__item-input form__item-input--custom-radio-option" type="text" placeholder="Свой вариант">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form__item-footer"></div>
+                        </div>
+                    </div>
+
+                    <div class="form__footer">
+                        <div class="form__agreement form__item-checkbox">
+                            <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_3_agreement" value="Y" id="field_3_agreement" checked>
+                            <label class="form__item-checkbox-label" for="field_3_agreement">Я&nbsp;ознакомился с&nbsp;соглашением сервиса и&nbsp;согласен с&nbsp;условиями пре&shy;до&shy;ста&shy;вле&shy;ния услуг</label>
+                        </div>
+
+                        <div class="form__btns modal__btns">
+                            <button class="modal__btn btn" type="button" data-modal-close>Отмена</button>
+                            <button class="modal__btn btn btn--accent" type="submit" data-modal-close>Заказать</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="form3_2" style="display: none">
+        <div class="modal__box">
+            <button class="modal__close" data-modal-close>
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.25 8.75L8.75 26.25M8.75 8.75L26.25 26.25" stroke="#8C8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="modal__content">
+                <h2 class="modal__heading">Пример формы</h2>
+
+                <form class="modal__form form" action="#" method="POST">
+                    <div class="form__progress form__progress--mobile-only">
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step"></div>
+                    </div>
+
+                    <div class="form__items">
+                        <div class="form__item form__item--error">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Строка<span class="form__item-heading-required">*</span></p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--text">
+                                <input class="form__item-input" type="text" placeholder="placeholder" name="field_4_1">
+                            </div>
+
+                            <div class="form__item-footer">
+                                <p class="form__error">Заполните обязательное поле «Строка»</p>
+                            </div>
+                        </div>
+
+                        <div class="form__item form__item--error">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Радиокнопки</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--radios">
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_4_2" value="1" id="field_4_2_1">
+                                    <label class="form__item-radio-label" for="field_4_2_1">Вариант 1</label>
+                                </div>
+
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_3_2" value="2" id="field_4_2_2">
+                                    <label class="form__item-radio-label" for="field_4_2_2">Вариант 2</label>
+                                </div>
+
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_3_2" value="3" id="field_4_2_3">
+                                    <label class="form__item-radio-label" for="field_4_2_3">Вариант 3</label>
+                                </div>
+
+                                <div class="form__item-radio form__item-radio--custom">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_3_2" value="" id="field_4_2_4" checked>
+                                    <div class="form__item-radio-label">
+                                        <input class="form__item-input form__item-input--custom-radio-option" type="text" placeholder="Свой вариант">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form__item-footer">
+                                <p class="form__error">Выберите вариант ответа длинный текст ошибки в несколько слов в две строки</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__footer">
+                        <div class="form__agreement form__item-checkbox">
+                            <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_4_agreement" value="Y" id="field_4_agreement" checked>
+                            <label class="form__item-checkbox-label" for="field_4_agreement">Я&nbsp;ознакомился с&nbsp;соглашением сервиса и&nbsp;согласен с&nbsp;условиями пре&shy;до&shy;ста&shy;вле&shy;ния услуг</label>
+                        </div>
+
+                        <div class="form__btns modal__btns">
+                            <button class="modal__btn btn" type="button" data-modal-close>Отмена</button>
+                            <button class="modal__btn btn btn--accent btn--disabled" type="submit" disabled>Заказать</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="form4_1" style="display: none">
+        <div class="modal__box">
+            <button class="modal__close" data-modal-close>
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.25 8.75L8.75 26.25M8.75 8.75L26.25 26.25" stroke="#8C8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="modal__content">
+                <h2 class="modal__heading">Пример формы</h2>
+
+                <form class="modal__form form" action="#" method="POST">
+                    <div class="form__progress">
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step"></div>
+                        <div class="form__progress-step"></div>
+                    </div>
+
+                    <div class="form__items">
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Строка<span class="form__item-heading-required">*</span></p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--text">
+                                <input class="form__item-input" type="text" placeholder="placeholder" name="field_5_1">
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Выпадающий список</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--select">
+                                <select class="form__item-select" name="field_5_2">
+                                    <option value="1">Опция 1</option>
+                                    <option value="2">Опция 2</option>
+                                    <option value="3">Опция 3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Радиокнопки</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--radios">
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_5_3" value="1" id="field_5_3_1" checked>
+                                    <label class="form__item-radio-label" for="field_5_3_1">Вариант 1</label>
+                                </div>
+
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_5_3" value="2" id="field_5_3_2">
+                                    <label class="form__item-radio-label" for="field_5_3_2">Вариант 2</label>
+                                </div>
+
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_5_3" value="3" id="field_5_3_3">
+                                    <label class="form__item-radio-label" for="field_5_3_3">Вариант 3</label>
+                                </div>
+
+                                <div class="form__item-radio form__item-radio--custom">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_5_3" value="" id="field_5_3_4">
+                                    <div class="form__item-radio-label">
+                                        <input class="form__item-input form__item-input--custom-radio-option" type="text" placeholder="Свой вариант">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--checkboxes">
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_4" value="Y" id="field_5_4_1">
+                                    <label class="form__item-checkbox-label" for="field_5_4_1">Да</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс множественный</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--checkboxes">
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_5" value="Тридцать три" id="field_5_5_1">
+                                    <label class="form__item-checkbox-label" for="field_5_5_1">Тридцать три</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_5" value="Двенадцать три пять шесть" id="field_5_5_2" checked>
+                                    <label class="form__item-checkbox-label" for="field_5_5_2">Двенадцать три пять шесть</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_5" value="Девятнадцать" id="field_5_5_3">
+                                    <label class="form__item-checkbox-label" for="field_5_5_3">Девятнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_5" value="Восемнадцать" id="field_5_5_4">
+                                    <label class="form__item-checkbox-label" for="field_5_5_4">Восемнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_5" value="Тринадцать" id="field_5_5_5">
+                                    <label class="form__item-checkbox-label" for="field_5_5_5">Тринадцать</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс множественный</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--checkboxes form__item-body--checkboxes-column">
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_5" value="Тридцать три" id="field_5_6_1">
+                                    <label class="form__item-checkbox-label" for="field_5_6_1">Тридцать три</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_5" value="Двенадцать три пять шесть" id="field_5_6_2" checked>
+                                    <label class="form__item-checkbox-label" for="field_5_6_2">Двенадцать три пять шесть</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_5" value="Девятнадцать" id="field_5_6_3">
+                                    <label class="form__item-checkbox-label" for="field_5_6_3">Девятнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_5" value="Восемнадцать" id="field_5_6_4">
+                                    <label class="form__item-checkbox-label" for="field_5_6_4">Восемнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_5_5" value="Тринадцать" id="field_5_6_5">
+                                    <label class="form__item-checkbox-label" for="field_5_6_5">Тринадцать</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__footer">
+                        <div class="form__btns modal__btns">
+                            <button class="modal__btn btn" type="button" data-modal-close>Отмена</button>
+                            <button class="modal__btn btn btn--accent" type="submit">Заказать</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="form4_2" style="display: none">
+        <div class="modal__box">
+            <button class="modal__close" data-modal-close>
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.25 8.75L8.75 26.25M8.75 8.75L26.25 26.25" stroke="#8C8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="modal__content">
+                <h2 class="modal__heading">Пример формы</h2>
+
+                <form class="modal__form form" action="#" method="POST">
+                    <div class="form__progress">
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step form__progress-step--active"></div>
+                        <div class="form__progress-step"></div>
+                    </div>
+
+                    <div class="form__items">
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Строка<span class="form__item-heading-required">*</span></p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--text">
+                                <input class="form__item-input" type="text" placeholder="placeholder" name="field_6_1">
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Выпадающий список</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--select">
+                                <select class="form__item-select" name="field_6_2">
+                                    <option value="1">Опция 1</option>
+                                    <option value="2">Опция 2</option>
+                                    <option value="3">Опция 3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Радиокнопки</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--radios">
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_6_3" value="1" id="field_6_3_1" checked>
+                                    <label class="form__item-radio-label" for="field_6_3_1">Вариант 1</label>
+                                </div>
+
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_6_3" value="2" id="field_6_3_2">
+                                    <label class="form__item-radio-label" for="field_6_3_2">Вариант 2</label>
+                                </div>
+
+                                <div class="form__item-radio">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_6_3" value="3" id="field_6_3_3">
+                                    <label class="form__item-radio-label" for="field_6_3_3">Вариант 3</label>
+                                </div>
+
+                                <div class="form__item-radio form__item-radio--custom">
+                                    <input class="form__item-radio-input hidden-input" type="radio" name="field_6_3" value="" id="field_6_3_4">
+                                    <div class="form__item-radio-label">
+                                        <input class="form__item-input form__item-input--custom-radio-option" type="text" placeholder="Свой вариант">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--checkboxes">
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_4" value="Y" id="field_6_4_1">
+                                    <label class="form__item-checkbox-label" for="field_6_4_1">Да</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс множественный</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--checkboxes">
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_5" value="Тридцать три" id="field_6_5_1">
+                                    <label class="form__item-checkbox-label" for="field_6_5_1">Тридцать три</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_5" value="Двенадцать три пять шесть" id="field_6_5_2" checked>
+                                    <label class="form__item-checkbox-label" for="field_6_5_2">Двенадцать три пять шесть</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_5" value="Девятнадцать" id="field_6_5_3">
+                                    <label class="form__item-checkbox-label" for="field_6_5_3">Девятнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_5" value="Восемнадцать" id="field_6_5_4">
+                                    <label class="form__item-checkbox-label" for="field_6_5_4">Восемнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_5" value="Тринадцать" id="field_6_5_5">
+                                    <label class="form__item-checkbox-label" for="field_6_5_5">Тринадцать</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item">
+                            <div class="form__item-head">
+                                <p class="form__item-heading">Чекбокс множественный</p>
+                            </div>
+
+                            <div class="form__item-body form__item-body--checkboxes form__item-body--checkboxes-column">
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_5" value="Тридцать три" id="field_6_6_1">
+                                    <label class="form__item-checkbox-label" for="field_6_6_1">Тридцать три</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_5" value="Двенадцать три пять шесть" id="field_6_6_2" checked>
+                                    <label class="form__item-checkbox-label" for="field_6_6_2">Двенадцать три пять шесть</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_5" value="Девятнадцать" id="field_6_6_3">
+                                    <label class="form__item-checkbox-label" for="field_6_6_3">Девятнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_5" value="Восемнадцать" id="field_6_6_4">
+                                    <label class="form__item-checkbox-label" for="field_6_6_4">Восемнадцать</label>
+                                </div>
+
+                                <div class="form__item-checkbox">
+                                    <input class="form__item-checkbox-input hidden-input" type="checkbox" name="field_6_5" value="Тринадцать" id="field_6_6_5">
+                                    <label class="form__item-checkbox-label" for="field_6_6_5">Тринадцать</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__footer">
+                        <div class="form__btns modal__btns">
+                            <button class="modal__btn btn" type="button" data-modal-close>Отмена</button>
+                            <button class="modal__btn btn btn--accent" type="submit">Заказать</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/choices.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

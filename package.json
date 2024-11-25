@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "del": "^5.1.0",
-    "postcss": "^8.4.18"
+    "postcss": "^8.4.18",
+    "sass": "^1.81.0"
   }
 }

@@ -1,27 +1,20 @@
-$accent-color-dark: #1E1765;
-$accent-color-medium: #615A9F;
-$accent-color-light: #DEDCEC;
-$link-color: #252525;
-$text-color: #5B5B5B;
-$secondary-text-color: #848484;
-$alert-color: #F05B5B;
-$contour-color: #EEEEEE;
-$bg-color: #F4F3F8;
-$footer-hover-color: #BD9B60;
-$telegram-color: #29A9EA;
-$whatsapp-color: #45C655;
-$ghost-heading-color: rgba(30,23,101,.03);
+$text-color: #383838;
+$link-color: #1E7ED7;
+$link-hover-color: #0D5EAA;
+$link-disabled-bg-color: #D2D2D2;
+$link-disabled-color: #F7F9FA;
+$btn-hover-bg-color: #E1F0FD;
+$alert-color: #DC4D40;
+$input-border-color: #F2F5F7;
+$input-placeholder-color: #8C8C8C;
+$file-size-color: #E4E4E4;
+$divider-color: #E9E9E9;
 
-$gradient: linear-gradient(to right, #C69848 0%, #F9D597 25%, #C69848 50%, #F9D597 75%, #C69848 100%);
-$gradient-vertical: linear-gradient(to bottom, #C69848 0%, #F9D597 25%, #C69848 50%, #F9D597 75%, #C69848 100%);
-$gradient-simple: linear-gradient(to right, #C69848 0%, #F9D597 50%, #C69848 100%);
-
-$box-shadow: 0 4px 20px rgba(44,48,123,.08);
-$box-shadow-hover: 0 10px 30px rgba(44,48,123,.15);
-
-$transition-delay: .05s;
+$btn-radius: 10px;
+$select-radius: 5px;
+$modal-radius: 20px;
+$checkbox-radius: 4px;
+$transition: .3s;
 
 $tablet-width: 768px;
-$desktop-width: 1024px;
-$big-desktop-width: 1500px;
-$full-hd-width: 1920px;
+$desktop-width: 1200px;

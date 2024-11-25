@@ -14,8 +14,8 @@ body {
     height: 100%;
     font-weight: 400;
     font-size: 14px;
-    line-height: 24px;
-    font-family: "Montserrat", "Arial", sans-serif;
+    line-height: 1.7;
+    font-family: "Inter Tight", "Arial", sans-serif;
     color: $text-color;
     background-color: #fff;
 
@@ -30,7 +30,31 @@ main {
 }
 
 a {
+    color: $link-color;
     text-decoration: none;
+    transition: color $transition;
+
+    &:hover,
+    &:focus {
+        color: $link-hover-color;
+        outline: none;
+    }
+}
+
+button {
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+label {
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 img {
@@ -39,12 +63,12 @@ img {
     height: auto;
 }
 
-.slick-initialized .slick-list {
-    width: 100%;
-}
-
-.slick-initialized .slick-track {
-    display: flex;
+input,
+select,
+textarea {
+    &:focus {
+        outline: none;
+    }
 }
 
 .visually-hidden:not(:focus):not(:active) {
@@ -69,60 +93,51 @@ img {
     clip: rect(0 0 0 0);
 }
 
-.jx-knightlab {
-    display: none !important;
-}
-
 h1 {
     margin: 0 0 30px;
-    font-weight: 300;
-    font-size: 25px;
-    line-height: 35px;
-    color: $accent-color-dark;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 26px;
 }
 
 h2 {
     margin: 0 0 30px;
-    font-weight: 300;
-    font-size: 23px;
-    line-height: 33px;
-    color: $accent-color-dark;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 20px;
 }
 
 h3 {
-    margin: 0 0 20px;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-    color: $accent-color-dark;
+    margin: 0 0 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 18px;
 }
 
 h4 {
-    margin: 0 0 30px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 26px;
-    color: $accent-color-dark;
+    margin: 0 0 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 16px;
 }
 
 h5 {
-    margin: 0 0 20px;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 25px;
-    color: $accent-color-dark;
+    margin: 0 0 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 15px;
 }
 
 h6 {
-    margin: 0 0 0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: $accent-color-dark;
+    margin: 0 0 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 14px;
 }
 
 p {
-    margin: 0 0 20px;
+    margin: 0 0 30px;
+    line-height: 1.6;
 }
 
 p:last-child {
@@ -132,46 +147,36 @@ p:last-child {
 @media (min-width: $desktop-width) {
     body {
       font-size: 18px;
-      line-height: 28px;
+      //line-height: 28px;
     }
 
     h1 {
-        margin: 0 0 60px;
-        font-size: 55px;
-        line-height: 70px;
+        margin: 0 0 45px;
+        font-size: 38px;
     }
 
     h2 {
-        margin: 0 0 60px;
-        font-size: 42px;
-        line-height: 50px;
+        margin: 0 0 45px;
+        font-size: 32px;
     }
 
     h3 {
-        margin: 0 0 40px;
-        font-size: 32px;
-        line-height: 40px;
+        margin: 0 0 30px;
+        font-size: 28px;
     }
     
     h4 {
-        margin: 0 0 50px;
-        font-size: 28px;
-        line-height: 34px;
+        margin: 0 0 30px;
+        font-size: 24px;
     }
 
     h5 {
         margin: 0 0 30px;
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 20px;
     }
 
     h6 {
-        margin: 0 0 0;
-        font-size: 20px;
-        line-height: 26px;
-    }
-
-    p {
         margin: 0 0 30px;
+        font-size: 18px;
     }
 }

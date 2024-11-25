@@ -1,0 +1,101 @@
+.modal {
+    @include dflex(nowrap, row, center, center);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.3);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal__box {
+    @include center;
+    position: absolute;
+    width: 100%;
+    max-width: calc(100% - 20px);
+    height: auto;
+    max-height: calc(100% - 20px);
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: $modal-radius;
+    overflow: auto;
+    cursor: default;
+    z-index: 20;
+
+    &--padding {
+        padding: 60px 20px;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+
+    & path {
+        stroke: $input-placeholder-color;
+        transition: stroke $transition;
+    }
+
+    &:hover,
+    &:focus {
+        & path {
+            stroke: #000;
+        }
+    }
+}
+
+.modal__content {
+    @include dflex(nowrap, column, flex-start, flex-start);
+
+    &--center {
+        align-items: center;
+    }
+}
+
+.modal__content--center .modal__heading {
+    text-align: center;
+}
+
+.modal__btns {
+    @include dflex(nowrap, row, flex-start, center);
+    gap: 15px;
+}
+
+.modal__heading {
+    margin: 0 0 30px;
+    font-size: 24px;
+}
+
+.modal__description {
+    margin: -15px 0 30px;
+    line-height: 1.7;
+}
+
+@media (min-width: $tablet-width) {
+    .modal__box {
+        max-width: 552px;
+        padding: 60px;
+    }
+
+    .modal__heading {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .modal__box {
+        max-width: 800px;
+
+        &--padding {
+            padding: 240px 60px;
+        }
+    }
+}

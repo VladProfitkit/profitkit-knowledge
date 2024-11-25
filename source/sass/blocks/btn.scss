@@ -1,0 +1,78 @@
+.btn {
+    @include dflex(nowrap, row, center, center);
+    min-height: 43px;
+    padding: 0 15px;
+    line-height: 1.5;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #fff;
+    border-radius: $btn-radius;
+    border: 1px solid $link-disabled-bg-color;
+    transition: background-color $transition, border $transition;
+
+    &:hover,
+    &:focus {
+        background-color: $btn-hover-bg-color;
+        border-color: $btn-hover-bg-color;
+    }
+
+    &--accent {
+        min-width: 100px;
+        color: #fff;
+        border: none;
+        background-color: $link-color;
+
+        &:hover,
+        &:focus {
+            background-color: $link-hover-color;
+        }
+    }
+
+    &--disabled,
+    &--disabled:hover,
+    &--disabled:focus {
+        color: $link-disabled-color;
+        background-color: $link-disabled-bg-color;
+        border: none;
+        cursor: default;
+    }
+
+    &--low {
+        min-height: 33px;
+    }
+
+    &--remove {
+        flex-shrink: 0;
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+
+        & path {
+            stroke: $link-disabled-bg-color;
+            transition: stroke $transition;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: transparent;
+
+            & path {
+                stroke: #000;
+            }
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .btn {
+        min-height: 47px;
+        font-size: 18px;
+
+        &--low {
+            min-height: 37px;
+        }
+    }
+}

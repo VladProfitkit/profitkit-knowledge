@@ -3,7 +3,7 @@
 var gulp = require("gulp");
 var plumber = require("gulp-plumber");
 var sourcemap = require("gulp-sourcemaps");
-var sass = require("gulp-sass");
+var sass = require("gulp-sass")(require("sass"));
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
@@ -18,7 +18,7 @@ gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
-    .pipe(sass({includePaths: require("node-normalize-scss").includePaths}))
+    .pipe(sass({errLogToConsole: true, includePaths: require("node-normalize-scss").includePaths}))
     .pipe(postcss([
       autoprefixer()
     ]))
@@ -63,7 +63,7 @@ gulp.task("refresh", function (done) {
 });
 
 gulp.task("images", function() {
-  return gulp.src("source/img/*.{png,jpg,svg}")
+  return gulp.src("source/img/*.{png,jpg,svg}", {encoding: false})
     .pipe(gulp.dest("build/img"));
 });
 
@@ -100,8 +100,8 @@ gulp.task("clean", function() {
 gulp.task("build", gulp.series(
 	"clean",
 	"copy",
-//	"css",
-//	"vendorCss",
+	"css",
+	"vendorCss",
 	"js",
 	"images",
 	"html",

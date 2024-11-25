@@ -1,0 +1,499 @@
+.form {
+    @include dflex(nowrap, column, flex-start, stretch);
+    width: 100%;
+}
+
+.form__items {
+    @include dflex(nowrap, column, flex-start, stretch);
+    width: 100%;
+}
+
+.form__item {
+    width: 100%;
+    margin-bottom: 25px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.form__item-head {
+    @include dflex(nowrap, row, flex-start, center);
+    margin-bottom: 10px;
+}
+
+.form__item-heading {
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.form__item-heading-required {
+    display: inline-block;
+    margin: 0 0 0 5px;
+    color: $alert-color;
+}
+
+.form__item-input {
+    @include dflex(nowrap, row, flex-start, center);
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    font-size: 15px;
+    background-color: $link-disabled-color;
+    border: 1px solid $input-border-color;
+    border-radius: $select-radius;
+    transition: border-color $transition;
+
+    &::placeholder {
+        color: $input-placeholder-color;
+        opacity: 1;
+    }
+
+    &:hover {
+        border-color: $link-disabled-bg-color;
+    }
+
+    &:focus {
+        border-color: $link-color;
+    }
+}
+
+.form__item--error .form__item-input:not(.form__item-input--custom-radio-option) {
+    border-color: $alert-color;
+}
+
+.form__errors {
+    @include dflex(nowrap, column, flex-start, stretch);
+
+    &:not(:empty) {
+        margin-top: 30px;
+    }
+}
+
+.form__error {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: $alert-color;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &::before {
+        @include abs-pseudo;
+        @include background("../img/icon-form-error.svg");
+        top: 2px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.form__item-body {
+    &--radios {
+        @include dflex(wrap, row, flex-start, center);
+        gap: 15px 30px;
+    }
+
+    &--checkboxes {
+        @include dflex(wrap, row, flex-start, center);
+        gap: 10px 30px;
+    }
+
+    &--checkboxes-column {
+        @include dflex(nowrap, column, flex-start, stretch);
+    }
+
+    &--files {
+        @include dflex(nowrap, column, flex-start, flex-start);
+    }
+
+    &--img-checkboxes {
+        @include dflex(nowrap, column, flex-start, stretch);
+        gap: 15px;
+
+        &.form__item-body--img-checkboxes-medium,
+        &.form__item-body--img-checkboxes-small {
+            @include dflex(wrap, row, flex-start, flex-start);
+        }
+    }
+
+    &--multiple-text {
+        @include dflex(nowrap, column, flex-start, stretch);
+    }
+}
+
+.form__item-radio {
+    &--custom {
+        @include dflex(nowrap, row, flex-start, center);
+        flex-basis: 100%;
+    }
+}
+
+.form__item-radio-label {
+    position: relative;
+    padding-left: 35px;
+    font-size: 15px;
+    cursor: pointer;
+
+    &::before {
+        @include abs-pseudo;
+        top: -4px;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        background-color: $link-disabled-color;
+        border: 1px solid $input-border-color;
+        border-radius: 50%;
+        transition: background-color $transition, border-color $transition;
+    }
+
+    &::after {
+        @include abs-pseudo;
+        top: -4px;
+        left: 0;
+        display: none;
+        width: 25px;
+        height: 25px;
+        background-color: #fff;
+        border: calc(15px / 2) solid $link-color;
+        border-radius: 50%;
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            background-color: $btn-hover-bg-color;
+            border-color: $btn-hover-bg-color;
+        }
+    }
+}
+
+.form__item-radio--custom .form__item-radio-label {
+    flex-grow: 1;
+
+    &::before,
+    &::after {
+        @include center-y;
+    }
+}
+
+.form__item-radio-input:checked + .form__item-radio-label::after {
+    display: block;
+}
+
+.form__item-checkbox-label {
+    position: relative;
+    padding-left: 35px;
+    font-size: 15px;
+
+    &::before {
+        @include abs-pseudo;
+        top: -4px;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        background-color: $link-disabled-color;
+        border: 1px solid $input-border-color;
+        border-radius: $checkbox-radius;
+        transition: background-color $transition, border-color $transition;
+    }
+
+    &::after {
+        @include abs-pseudo;
+        top: -4px;
+        left: 0;
+        display: none;
+        width: 25px;
+        height: 25px;
+        background-color: $link-color;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 15px 9px;
+        background-image: url("../img/icon-form-checkbox.svg");
+        border-radius: $checkbox-radius;
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            background-color: $btn-hover-bg-color;
+            border-color: $btn-hover-bg-color;
+        }
+    }
+}
+
+.form__item-checkbox-input:checked + .form__item-checkbox-label::after {
+    display: block;
+}
+
+.form__footer {
+    @include dflex(nowrap, column, flex-start, stretch);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form__btns {
+    align-self: flex-end;
+}
+
+.form__agreement .form__item-checkbox-label {
+    display: block;
+
+    &::before,
+    &::after {
+        top: 0;
+    }
+}
+
+.form__item-textarea {
+    @include dflex(nowrap, row, flex-start, flex-start);
+    width: 100%;
+    height: 72px;
+    min-height: 45px;
+    max-height: 200px;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 1.7;
+    background-color: $link-disabled-color;
+    border: 1px solid $input-border-color;
+    border-radius: $select-radius;
+    transition: border-color $transition;
+    resize: vertical;
+
+    &::placeholder {
+        color: $input-placeholder-color;
+        opacity: 1;
+    }
+
+    &:hover {
+        border-color: $link-disabled-bg-color;
+    }
+
+    &:focus {
+        border-color: $link-color;
+    }
+}
+
+.form__item--error .form__item-textarea {
+    border-color: $alert-color;
+}
+
+.form__item-file-list {
+    @include dflex(nowrap, column, flex-start, flex-start);
+    width: 100%;
+    margin-bottom: 10px;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.form__item-uploaded-file {
+    margin-bottom: 5px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.form__progress {
+    @include dflex(nowrap, row, space-between, center);
+    gap: 7px;
+    margin-bottom: 30px;
+}
+
+.form__progress-step {
+    flex-grow: 1;
+    height: 4px;
+    border-radius: $modal-radius;
+    background-color: $divider-color;
+
+    &--active {
+        background-color: $link-color;
+    }
+}
+
+.form__item-footer {
+    margin-top: 15px;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.form__item-img-checkbox {
+    width: 100%;
+    aspect-ratio: 332/220;
+    border-radius: $btn-radius;
+    overflow: hidden;
+}
+
+.form__item-img-checkbox-label {
+    @include object-fit;
+    position: relative;
+    display: block;
+
+    &::before {
+        @include abs-pseudo;
+        top: 10px;
+        left: 10px;
+        width: 25px;
+        height: 25px;
+        background-color: $link-disabled-color;
+        border: 1px solid $input-border-color;
+        border-radius: $checkbox-radius;
+        transition: background-color $transition, border-color $transition;
+    }
+
+    &::after {
+        @include abs-pseudo;
+        top: 10px;
+        left: 10px;
+        display: none;
+        width: 25px;
+        height: 25px;
+        background-color: $link-color;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 15px 9px;
+        background-image: url("../img/icon-form-checkbox.svg");
+        border-radius: $checkbox-radius;
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            background-color: $btn-hover-bg-color;
+            border-color: $btn-hover-bg-color;
+        }
+    }
+}
+
+.form__item-img-checkbox-input:checked + .form__item-img-checkbox-label::after {
+    display: block;
+}
+
+.form__item-img-checkbox-img {
+    @include object-fit;
+    display: block;
+}
+
+.form__item-body--img-checkboxes-small .form__item-img-checkbox,
+.form__item-body--img-checkboxes-medium .form__item-img-checkbox {
+    width: auto;
+    flex-basis: calc(50% - (15px / 2));
+}
+
+.form__item-img-checkbox {
+    max-width: 332px;
+}
+
+.form__item-miltistring-text {
+    @include dflex(nowrap, row, flex-start, center);
+    margin-bottom: 15px;
+}
+
+.form__item-miltistring-remove {
+    margin-left: 5px;
+}
+
+.form__item-miltistring-add {
+    align-self: flex-start;
+}
+
+.form__item-tip {
+    margin-left: 12px;
+}
+
+@media (min-width: $tablet-width) {
+    .form__item {
+        margin-bottom: 35px;
+    }
+
+    .form__item-head {
+        margin-bottom: 15px;
+    }
+
+    .form__item-input {
+        height: 51px;
+        font-size: 18px;
+    }
+
+    .form__item-textarea {
+        height: 82px;
+        min-height: 51px;
+        font-size: 18px;
+    }
+
+    .form__error {
+        font-size: 18px;
+
+        &::before {
+            top: 3px;
+        }
+    }
+
+    .form__item-radio-label {
+        font-size: 17px;
+    }
+
+    .form__item-checkbox-label {
+        font-size: 17px;
+    }
+
+    .form__item-file-list {
+        margin-bottom: 15px;
+    }
+
+    .form__progress {
+        &--mobile-only {
+            display: none;
+        }
+    }
+
+    .form__progress-step {
+        height: 5px;
+    }
+
+    .form__item-body--img-checkboxes {
+        &:not(.form__item-body--img-checkboxes-column) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    .form__item-body--img-checkboxes .form__item-img-checkbox {
+        width: auto;
+        flex-basis: calc(50% - (15px / 2));
+    }
+
+    .form__item-body--img-checkboxes-medium .form__item-img-checkbox {
+        flex-basis: calc(33.3333% - (30px / 3));
+    }
+
+    .form__item-body--img-checkboxes-small .form__item-img-checkbox {
+        flex-basis: calc(25% - (45px / 4));
+    }
+
+    .form__item-miltistring-remove {
+        margin-left: 15px;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .form__footer {
+        @include dflex(nowrap, row, flex-start, flex-start);
+        gap: 42px;
+    }
+
+    .form__btns {
+        align-self: flex-start;
+        margin-left: auto;
+    }
+}

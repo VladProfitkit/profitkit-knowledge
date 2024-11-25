@@ -1,0 +1,43 @@
+.tip {
+    position: relative;
+}
+
+.tip__trigger {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: $link-disabled-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px auto;
+    background-image: url("../img/icon-tip-questionmark.svg");
+    border: 1px solid $link-disabled-bg-color;
+    transition: background-color $transition, border-color $transition;
+
+    &:hover,
+    &:focus {
+        background-color: $btn-hover-bg-color;
+        border-color: $btn-hover-bg-color;
+    }
+}
+
+.tip__content {
+    @include center;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.7;
+    background-color: #fff;
+    border-radius: $select-radius;
+    border: 1px solid $link-disabled-bg-color;
+    z-index: 10;
+}
+
+.tip--open .tip__content {
+    display: flex;
+}
