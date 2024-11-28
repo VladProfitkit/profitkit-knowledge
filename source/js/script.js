@@ -21,15 +21,15 @@ $(function () {
     }
 
     //ввод своего варианта среди радио-кнопок:
-    $('body').on('focus', '.form__item-input--custom-radio-option', function() {
-        let optionWrapper = $(this).closest('.form__item-radio--custom'),
+    $('body').on('focus', '.pk-form__item-input--custom-radio-option', function() {
+        let optionWrapper = $(this).closest('.pk-form__item-radio--custom'),
             radio = optionWrapper.find('input[type="radio"]');
 
         radio.prop('checked', true);
     });
 
-    $('body').on('input', '.form__item-input--custom-radio-option', function() {
-        let optionWrapper = $(this).closest('.form__item-radio--custom'),
+    $('body').on('input', '.pk-form__item-input--custom-radio-option', function() {
+        let optionWrapper = $(this).closest('.pk-form__item-radio--custom'),
             radio = optionWrapper.find('input[type="radio"]'),
             text = $(this).val();
 
@@ -55,10 +55,10 @@ $(function () {
 
     function htmlFileData(name, size, index = false) {
         return '\n' +
-            '<div class="form__item-uploaded-file uploaded-file">\n' +
-            '    <span class="uploaded-file__name">' + name + '</span>\n' +
-            '    <span class="uploaded-file___size">' + size + '</span>\n' +
-            '    <button class="uploaded-file__remove btn btn--remove" type="button"' + (index === false ? '' : ' data-index="' + index + '"') + '>\n' +
+            '<div class="pk-form__item-uploaded-file pk-uploaded-file">\n' +
+            '    <span class="pk-uploaded-file__name">' + name + '</span>\n' +
+            '    <span class="pk-uploaded-file___size">' + size + '</span>\n' +
+            '    <button class="pk-uploaded-file__remove btn btn--remove" type="button"' + (index === false ? '' : ' data-index="' + index + '"') + '>\n' +
             '        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
             '            <path d="M18.5 6.5L6.5 18.5M6.5 6.5L18.5 18.5" stroke="#D2D2D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>\n' +
             '        </svg>\n' +
@@ -66,9 +66,9 @@ $(function () {
             '</div>';
     }
 
-    $('body').on('click', '.form__item-file-label', function() {
-        let container = $(this).closest('.form__item-body--files'),
-            input = container.find('.form__item-file'),
+    $('body').on('click', '.pk-form__item-file-label', function() {
+        let container = $(this).closest('.pk-form__item-body--files'),
+            input = container.find('.pk-form__item-file'),
             isMultiple = input.attr('multiple') == 'multiple';
 
         if (isMultiple) {
@@ -76,10 +76,10 @@ $(function () {
         }
     });
 
-    $('body').on('change', '.form__item-file', function() {
-        let container = $(this).closest('.form__item-body--files'),
-            label = container.find('.form__item-file-label'),
-            listBlock = container.find('.form__item-file-list'),
+    $('body').on('change', '.pk-form__item-file', function() {
+        let container = $(this).closest('.pk-form__item-body--files'),
+            label = container.find('.pk-form__item-file-label'),
+            listBlock = container.find('.pk-form__item-file-list'),
             isMultiple = $(this).attr('multiple') == 'multiple';
 
         if (isMultiple) {
@@ -127,11 +127,11 @@ $(function () {
         }
     });
 
-    $('body').on('click', '.uploaded-file__remove', function() {
-        let container = $(this).closest('.form__item-body--files'),
-            label = container.find('.form__item-file-label'),
-            listBlock = container.find('.form__item-file-list'),
-            fileInput = container.find('.form__item-file'),
+    $('body').on('click', '.pk-uploaded-file__remove', function() {
+        let container = $(this).closest('.pk-form__item-body--files'),
+            label = container.find('.pk-form__item-file-label'),
+            listBlock = container.find('.pk-form__item-file-list'),
+            fileInput = container.find('.pk-form__item-file'),
             isMultiple = fileInput.attr('multiple') == 'multiple';
 
         if (isMultiple) {
@@ -147,9 +147,9 @@ $(function () {
             }
 
             fileInput[0].files = clearedList.files;
-            $(this).closest('.uploaded-file').remove();
+            $(this).closest('.pk-uploaded-file').remove();
 
-            if (listBlock.find('.uploaded-file').length <= 0) {
+            if (listBlock.find('.pk-uploaded-file').length <= 0) {
                 listBlock.html('');
             }
 
@@ -162,13 +162,13 @@ $(function () {
     });
 
     //мультистрочное свойство в формах:
-    $('body').on('click', '.form__item-miltistring-add', function() {
+    $('body').on('click', '.pk-form__item-miltistring-add', function() {
         let addBtn = $(this),
             fieldName = addBtn.data('field-name'),
             htmlMarkup = '\n' +
-                '<div class="form__item-miltistring-text">\n' +
-                '    <input class="form__item-input form__item-input--multistring" type="text" placeholder="placeholder" name="' + fieldName + '">\n' +
-                '    <button class="form__item-miltistring-remove btn btn--remove" type="button">\n' +
+                '<div class="pk-form__item-miltistring-text">\n' +
+                '    <input class="pk-form__item-input pk-form__item-input--multistring" type="text" placeholder="placeholder" name="' + fieldName + '">\n' +
+                '    <button class="pk-form__item-miltistring-remove btn btn--remove" type="button">\n' +
                 '        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
                 '            <path d="M18.5 6.5L6.5 18.5M6.5 6.5L18.5 18.5" stroke="#D2D2D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>\n' +
                 '        </svg>\n' +
@@ -178,40 +178,61 @@ $(function () {
         addBtn.before(htmlMarkup);
     });
 
-    $('body').on('click', '.form__item-miltistring-remove', function() {
-        let multitextBlock = $(this).closest('.form__item-miltistring-text');
+    $('body').on('click', '.pk-form__item-miltistring-remove', function() {
+        let multitextBlock = $(this).closest('.pk-form__item-miltistring-text');
 
         multitextBlock.remove();
     });
 
     //подсказки:
-    $('body').on('click', '.tip__trigger', function() {
-        let tip = $(this).closest('.tip');
+    $('body').on('click', '.pk-tip__trigger', function() {
+        let tip = $(this).closest('.pk-tip');
 
-        tip.toggleClass('tip--open');
+        tip.toggleClass('pk-tip--open');
     });
 
     $('body').on('click', function(e) {
-        if (!$('.tip').is(e.target) && $('.tip').has(e.target).length === 0) {
-            if ($('.tip--open').length) {
-                $('.tip--open').removeClass('tip--open');
+        if (!$('.pk-tip').is(e.target) && $('.pk-tip').has(e.target).length === 0) {
+            if ($('.pk-tip--open').length) {
+                $('.pk-tip--open').removeClass('pk-tip--open');
             }
         }
     });
 
     //кастомные селекты:
-    let selectsDefault = $('select.form__item-select');
+    let selectsDefault = $('select.pk-form__item-select');
     if (selectsDefault.length) {
         selectsDefault.each(function () {
             let customSelectDefault = new Choices($(this)[0], {
                 searchEnabled: false,
                 placeholder: true,
                 placeholderValue: 'Выберите',
+                classNames: {
+                    containerOuter: ['choices', 'pk-choices'],
+                    containerInner: ['choices__inner', 'pk-choices__inner'],
+                    input: ['choices__input', 'pk-choices__input'],
+                    inputCloned: ['choices__input--cloned', 'pk-choices__input--cloned'],
+                    list: ['choices__list', 'pk-choices__list'],
+                    listItems: ['choices__list--multiple', 'pk-choices__list--multiple'],
+                    listSingle: ['choices__list--single', 'pk-choices__list--single'],
+                    listDropdown: ['choices__list--dropdown', 'pk-choices__list--dropdown'],
+                    item: ['choices__item', 'pk-choices__item'],
+                    itemSelectable: ['choices__item--selectable', 'pk-choices__item--selectable'],
+                    itemDisabled: ['choices__item--disabled', 'pk-choices__item--disabled'],
+                    itemChoice: ['choices__item--choice', 'pk-choices__item--choice'],
+                    description: ['choices__description', 'pk-choices__description'],
+                    placeholder: ['choices__placeholder', 'pk-choices__placeholder'],
+                    group: ['choices__group', 'pk-choices__group'],
+                    groupHeading: ['choices__heading', 'pk-choices__heading'],
+                    button: ['choices__button', 'pk-choices__button'],
+                    notice: ['choices__notice', 'pk-choices__notice'],
+                    addChoice: ['choices__item--selectable', 'pk-choices__item--selectable', 'add-choice'],
+                },
             });
         });
     }
 
-    let selectsSearch = $('select.form__item-search-select');
+    let selectsSearch = $('select.pk-form__item-search-select');
     if (selectsSearch.length) {
         selectsSearch.each(function () {
             let customSelectSearch = new Choices($(this)[0], {
@@ -219,7 +240,25 @@ $(function () {
                 placeholderValue: 'Выберите',
                 searchPlaceholderValue: 'Выберите',
                 classNames: {
-                    input: ['choices__input', 'form__item-input'],
+                    containerOuter: ['choices', 'pk-choices'],
+                    containerInner: ['choices__inner', 'pk-choices__inner'],
+                    input: ['choices__input', 'pk-choices__input', 'pk-form__item-input'],
+                    inputCloned: ['choices__input--cloned', 'pk-choices__input--cloned'],
+                    list: ['choices__list', 'pk-choices__list'],
+                    listItems: ['choices__list--multiple', 'pk-choices__list--multiple'],
+                    listSingle: ['choices__list--single', 'pk-choices__list--single'],
+                    listDropdown: ['choices__list--dropdown', 'pk-choices__list--dropdown'],
+                    item: ['choices__item', 'pk-choices__item'],
+                    itemSelectable: ['choices__item--selectable', 'pk-choices__item--selectable'],
+                    itemDisabled: ['choices__item--disabled', 'pk-choices__item--disabled'],
+                    itemChoice: ['choices__item--choice', 'pk-choices__item--choice'],
+                    description: ['choices__description', 'pk-choices__description'],
+                    placeholder: ['choices__placeholder', 'pk-choices__placeholder'],
+                    group: ['choices__group', 'pk-choices__group'],
+                    groupHeading: ['choices__heading', 'pk-choices__heading'],
+                    button: ['choices__button', 'pk-choices__button'],
+                    notice: ['choices__notice', 'pk-choices__notice'],
+                    addChoice: ['choices__item--selectable', 'pk-choices__item--selectable', 'add-choice'],
                 },
                 noResultsText: 'Ничего не найдено',
             });

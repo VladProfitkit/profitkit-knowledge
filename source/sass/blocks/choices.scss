@@ -1,16 +1,16 @@
-.choices {
+.pk-choices {
     position: relative;
     cursor: pointer;
 
     &.is-focused {
         outline: none;
 
-        & .choices__list--single {
+        & .pk-choices__list--single {
             border-color: $link-color;
         }
 
         &.is-open {
-            & .choices__list--single {
+            & .pk-choices__list--single {
                 border-bottom-color: transparent;
                 border-radius: $select-radius $select-radius 0 0;
             }
@@ -18,7 +18,7 @@
     }
 }
 
-.choices__list--single {
+.pk-choices__list--single {
     @include dflex(nowrap, row, flex-start, center);
     position: relative;
     width: 100%;
@@ -44,27 +44,27 @@
     }
 }
 
-.form__item--error .choices__list--single {
+.pk-form__item--error .pk-choices__list--single {
     border-color: $alert-color;
 }
 
-.choices__placeholder {
+.pk-choices__placeholder {
     color: $input-placeholder-color;
     opacity: 1;
 }
 
-.choices.is-open .choices__list--single {
+.pk-choices.is-open .pk-choices__list--single {
     background-color: #fff;
 }
 
-.choices__list--dropdown {
+.pk-choices__list--dropdown {
     position: absolute;
     top: calc(100% - 2px);
     left: 0;
     display: none;
 }
 
-.choices__list--dropdown.is-active {
+.pk-choices__list--dropdown.is-active {
     display: block;
     width: 100%;
     padding: 10px 15px;
@@ -75,12 +75,12 @@
     z-index: 10;
 }
 
-.choices__list--dropdown .choices__list {
+.pk-choices__list--dropdown .pk-choices__list {
     @include dflex(nowrap, column, flex-start, stretch);
     gap: 15px;
 }
 
-.choices__item {
+.pk-choices__item {
     font-size: 15px;
     line-height: 1.5;
     cursor: pointer;
@@ -91,7 +91,7 @@
     }
 }
 
-.choices__input.form__item-input {
+.pk-choices__input.pk-form__item-input {
     position: absolute;
     top: -43px;
     left: 0;
@@ -101,7 +101,7 @@
     border: none;
 }
 
-.form__item-body--search-select .choices__list--dropdown::after {
+.pk-form__item-body--search-select .pk-choices__list--dropdown::after {
     @include abs-pseudo;
     @include background("../img/icon-select-arrow.svg");
     top: -30px;
@@ -112,21 +112,21 @@
 }
 
 @media (min-width: $tablet-width) {
-    .choices__list--single {
+    .pk-choices__list--single {
         height: 51px;
         font-size: 18px;
     }
 
-    .choices__item {
+    .pk-choices__item {
         font-size: 18px;
     }
 
-    .choices__input.form__item-input {
+    .pk-choices__input.pk-form__item-input {
         top: -49px;
         height: 50px;
     }
 
-    .form__item-body--search-select .choices__list--dropdown::after {
+    .pk-form__item-body--search-select .pk-choices__list--dropdown::after {
         top: -33px;
     }
 }

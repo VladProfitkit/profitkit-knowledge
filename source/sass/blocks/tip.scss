@@ -1,8 +1,8 @@
-.tip {
+.pk-tip {
     position: relative;
 }
 
-.tip__trigger {
+.pk-tip__trigger {
     display: block;
     width: 25px;
     height: 25px;
@@ -22,7 +22,7 @@
     }
 }
 
-.tip__content {
+.pk-tip__content {
     @include center;
     position: absolute;
     display: none;
@@ -38,6 +38,6 @@
     z-index: 10;
 }
 
-.tip--open .tip__content {
+.pk-tip--open .pk-tip__content {
     display: flex;
 }
